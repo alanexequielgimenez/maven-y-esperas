@@ -47,11 +47,11 @@ public class DespegarTestMaven {
 		String navegador ="chrome";
 		String url = "https://www.despegar.com.ar/hoteles/";
 		this.driver = DriverFactory.LevantarBrowser(navegador, url);
-		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		
 		
 	}
-  @Test
+  @Test(description = "validar que la reserva funcione")
   public void reservarViaje() throws Exception{
 	  
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(cerrarface));
@@ -97,6 +97,7 @@ public class DespegarTestMaven {
 		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(aplicarBuscar));
 		driver.findElement(aplicarBuscar).click();
+		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(cierraModal));
 		driver.findElement(cierraModal).click();
 	
