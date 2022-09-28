@@ -1,14 +1,11 @@
 package com.files.tests;
 
-import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestContext;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import com.files.driver.DriverFactory;
 import com.files.pages.DespegarAlojamientoPage;
 import com.files.pages.DespegarResultsPage;
@@ -30,7 +27,7 @@ public class DespegarTest2 extends DriverFactory {
 	
 	@DataProvider (name = "Data Provider Despegar")
 	public Object [][] dpMetodo(){
-		return new Object [][] {{"Cordoba"}, {"Misiones"}, {"Bariloche"}};
+		return new Object [][] {{"Miami"}, {"Misiones"}, {"Bariloche"}};
 	}
 	
 	@Test(groups = {"grupo1"}, dataProvider = "Data Provider Despegar", description = "Validar el resultado de la busqueda de alojamiento")
@@ -51,5 +48,10 @@ public class DespegarTest2 extends DriverFactory {
 		
 			
 		}
+	
+	@AfterMethod(alwaysRun = true)
+	public void tearDown() throws Exception {
+		DriverFactory.CloseBrowser(driver); 
+	}
 	}
 

@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DespegarResultsPage {
-	@FindBy (xpath = "//*[@id=\\\"vacation-rentals-coachmark\\\"]/div/div/i[2]")
+	@FindBy (xpath = "//*[@id='vacation-rentals-coachmark']/div/div/i[2]")
 	WebElement clickCierraModal;
 	
 	@FindBy (xpath = "//aloha-app-root/aloha-results/div/div/div/div[2]/div[2]/aloha-list-view-container/div[3]/div[1]/aloha-cluster-container/div/div/div[1]/div/div[2]/div[1]/aloha-cluster-accommodation-info-container/div[1]/span")

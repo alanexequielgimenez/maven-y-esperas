@@ -25,40 +25,40 @@ public class DespegarAlojamientoPage {
 	@FindBy (xpath = "//div[7]/div/div[1]/ul/li[1]/span")
 	WebElement seleccionarCiudad;
 	
-	@FindBy (xpath = "//*[@id=\\\"searchbox-sbox-box-hotels\\\"]/div/div/div/div/div[3]/div[2]/div/div[1]/div/div/div/div/input")
+	@FindBy (css = "input[placeholder='Entrada']")
 	WebElement seleccionarInputEntrada;
 	
-	@FindBy (xpath = "//*[@id=\\\"component-modals\\\"]/div[1]/div[1]/div[2]/div[1]/div[3]/div[26]/div")
+	@FindBy (xpath = "//*[@id='component-modals']//div[30]/div[1]")
 	WebElement seleccionarIda;
 	
-	@FindBy (xpath = "//*[@id=\\\"component-modals\\\"]/div[1]/div[1]/div[2]/div[1]/div[3]/div[30]/div")
+	@FindBy (xpath = "//*[@id='component-modals']//div[2]/div[3]/div[13]/div[1]")
 	WebElement seleccionarVuelta;
 	
-	@FindBy (xpath = "//*[@id=\\\"component-modals\\\"]/div[1]/div[2]/div[1]/button/em")
+	@FindBy (css = "button.sbox5-3-btn.-primary.-md")
 	WebElement seleccionarAplicar;
 	
-	@FindBy (xpath = "//*[@id=\\\"svg-bed-378XaOe\\\"]")
+	@FindBy (css = "input.sbox5-3-second-input")
 	WebElement seleccionarHabitaciones;
 	
-	@FindBy (xpath = "//*[@id=\\\"component-modals\\\"]/div[2]/div/div/div[1]/div[2]/div[1]/div[2]/div/button[2]")
+	@FindBy (xpath = "//*[@id='component-modals']/div[2]//div[1]/div[2]/div[1]/div[2]//button[2]")
 	WebElement seleccionarAdultos;
 	
-	@FindBy (xpath = "//*[@id=\\\"component-modals\\\"]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/div/button[2]" )
+	@FindBy (xpath = "//*[@id='component-modals']//div[2]/div[2]//button[2]" )
 	WebElement seleccionarMenores;
 	
-	@FindBy (xpath = "//*[@id=\\\"component-modals\\\"]/div[2]/div/div/div[1]/div[2]/div[3]/div[2]/div/div/select")
+	@FindBy (css = "select.select")
 	WebElement seleccionarLaEdadMenores;
 	
-	@FindBy (xpath = "//*[@id=\\\"component-modals\\\"]/div[2]/div/div/div[1]/div[2]/div[3]/div[2]/div/div/select/option[4]")
+	@FindBy (xpath = "//*[@id='component-modals']//div//select/option[6]")
 	WebElement clickEdadMenores;
 	
-	@FindBy (xpath = "//*[@id=\\\"component-modals\\\"]/div[2]/div/div/div[2]/a[1]/em")
+	@FindBy (xpath = "//*[@id='component-modals']/div[2]/div/div/div[2]/a[1]/em")
 	WebElement clickAplicarBusqueda;
 	
-	@FindBy (xpath = "//*[@id=\\\"searchbox-sbox-box-hotels\\\"]/div/div/div/div/div[3]/button")
+	@FindBy (xpath = "//*[@id='searchbox-sbox-box-hotels']/div/div/div/div/div[3]/button")
 	WebElement clickAplicarBuscar;
 	
-	@FindBy (xpath = "//*[@id=\\\"vacation-rentals-coachmark\\\"]/div/div/i[2]")
+	@FindBy (xpath = "//*[@id='vacation-rentals-coachmark']/div/div/i[2]")
 	WebElement clickCierraModal;
 	
 	@FindBy (xpath = "//aloha-app-root/aloha-results/div/div/div/div[2]/div[2]/aloha-list-view-container/div[3]/div[1]/aloha-cluster-container/div/div/div[1]/div/div[2]/div[1]/aloha-cluster-accommodation-info-container/div[1]/span")
@@ -122,6 +122,7 @@ public class DespegarAlojamientoPage {
 		
 	}
 	public DespegarResultsPage buscarAlojamiento() {
+		this.wait.until(ExpectedConditions.visibilityOf(clickAplicarBuscar));
 		this.clickAplicarBuscar.click();
 		return new DespegarResultsPage(this.driver);
 	}

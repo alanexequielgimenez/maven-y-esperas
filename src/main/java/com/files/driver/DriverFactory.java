@@ -42,9 +42,9 @@ public class DriverFactory {
 		 
 		 return driver;
 	 }
-	// public static void CloseBrowser(WebDriver driver) {
-		// driver.quit();
-	// }
+	public static void CloseBrowser(WebDriver driver) {
+		 driver.quit();
+	}
 	
 }
 
